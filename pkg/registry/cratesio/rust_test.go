@@ -15,6 +15,7 @@ func TestVersionAt(t *testing.T) {
 		expected    string
 		shouldError bool
 	}{
+		{"latest patch release", time.Date(2026, 7, 16, 0, 0, 0, 0, time.UTC), "1.97.1", false},
 		{"exact match", time.Date(2023, 9, 19, 0, 0, 0, 0, time.UTC), "1.72.1", false},
 		{"between releases", time.Date(2023, 10, 1, 0, 0, 0, 0, time.UTC), "1.72.1", false},
 		{"before all releases", time.Date(2012, 10, 1, 0, 0, 0, 0, time.UTC), "", true},
